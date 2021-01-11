@@ -5,6 +5,9 @@ function Router() {
   return (
     <View style={styles.container}>
       <Text style={styles.text}>TEAM BONANZA</Text>
+      <Text>Mert Kaan</Text>
+      <Text>Fatma</Text>
+
     </View>
   );
 }
@@ -14,6 +17,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#b3e5fc'
   },
   text: {
     fontSize: 40,
