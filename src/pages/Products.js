@@ -1,14 +1,14 @@
 import React, {useState,useEffect} from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, FlatList } from 'react-native';
 import axios from 'axios';
+import ProductList from '../components/ProductList';
 
 
 const api_url = 'https://fakestoreapi.com/products';
 
 
+export function Products({navigation}) {
 
-
-export  function Products() {
 const [productList, setproductList] = useState({});
 
     function fetchdata(){
@@ -16,15 +16,23 @@ const [productList, setproductList] = useState({});
         axios.get(api_url).then((response) => setproductList(response.data));
     }
     
-    
 
     useEffect(() => {
     fetchdata();
     }, [])
 
+    const renderProduct = ({item}) => {
+        return <ProductList data={item} onClick={() => navigation.navigate('Basket Screen')}/>
+    }
+
+
     return (
         <View>
-            <Text>{productList.title}</Text>
+            <FlatList
+          keyExtractor={(item) => item.id.toString()}
+          data={productList}
+          renderItem={renderProduct}
+        />
         </View>
     )
 }
