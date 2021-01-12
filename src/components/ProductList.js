@@ -13,7 +13,7 @@ export default function ProductList({data, onClick}) {
   return (
     <TouchableOpacity onPress={onClick}>
       <View style={styles.container}>
-        <Icon name="heart" color={'red'} size={20} />
+        <Icon name="heart" color={'red'} size={25} />
         <Image
           style={styles.image}
           source={{uri: data.image}}
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     flex: 1,
     textAlign: 'right',
     fontFamily: 'monospace',
-    fontSize: 30,
+    fontSize: 20,
     color: 'red',
     fontWeight: 'bold',
   },
