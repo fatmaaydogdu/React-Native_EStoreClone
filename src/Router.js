@@ -1,29 +1,33 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Basket, Favorites, Products} from './pages';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import MainProvider from './context/MainProvider';
 
 const Tab = createBottomTabNavigator();
+
 function Router() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator
-        initialRouteName="Product Screen"
-        screenOptions={({route}) => ({
-          tabBarIcon: ({focused, color}) => generateIcon(focused, color, route),
-          tabBarLabel: () => null,
-        })}
-        tabBarOptions={{
-          activeTintColor: '#f57f17',
-          inactiveTintColor: 'gray',
-        }}>
-        <Tab.Screen name="Basket Screen" component={Basket} />
-        <Tab.Screen name="Favorites Screen" component={Favorites} />
-        <Tab.Screen name="Product Screen" component={Products} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <MainProvider>
+      <NavigationContainer>
+        <Tab.Navigator
+          initialRouteName="Product Screen"
+          screenOptions={({route}) => ({
+            tabBarIcon: ({focused, color}) =>
+              generateIcon(focused, color, route),
+            tabBarLabel: () => null,
+          })}
+          tabBarOptions={{
+            activeTintColor: '#f57f17',
+            inactiveTintColor: 'gray',
+          }}>
+          <Tab.Screen name="Basket Screen" component={Basket} />
+          <Tab.Screen name="Favorites Screen" component={Favorites} />
+          <Tab.Screen name="Product Screen" component={Products} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </MainProvider>
   );
 }
 

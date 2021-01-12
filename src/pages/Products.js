@@ -1,6 +1,5 @@
-import React, {useState, useEffect} from 'react';
+import React from 'react';
 import {View, Text, FlatList} from 'react-native';
-import axios from 'axios';
 import {useDispatch} from 'react-redux';
 import {useFetch} from '../hooks/useFetch';
 import ProductList from '../components/ProductList';
