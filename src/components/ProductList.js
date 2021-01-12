@@ -9,21 +9,21 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default function ProductList({data, onClick}) {
+export default function ProductList({item, onClick, onBasket}) {
   return (
     <TouchableOpacity onPress={onClick}>
       <View style={styles.container}>
         <Icon name="heart" color={'red'} size={25} />
         <Image
           style={styles.image}
-          source={{uri: data.image}}
+          source={{uri: item.image}}
           resizeMode={'center'}
         />
         <View style={styles.textContainer}>
-          <Text style={styles.title}>{data.title}</Text>
-          <Text style={styles.price}>{data.price} ₺</Text>
+          <Text style={styles.title}>{item.title}</Text>
+          <Text style={styles.price}>{item.price} ₺</Text>
         </View>
-        <TouchableOpacity style={styles.iconContainer}>
+        <TouchableOpacity onPress={onBasket} style={styles.iconContainer}>
           <Icon name="shopping" color={'#f57f17'} size={50} />
         </TouchableOpacity>
       </View>
