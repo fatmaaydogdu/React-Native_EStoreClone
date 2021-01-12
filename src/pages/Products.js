@@ -1,21 +1,23 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
+import {View, FlatList} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {useFetch} from '../hooks/useFetch';
 import ProductList from '../components/ProductList';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
-export function Products(props) {
-  const {id} = props.route.params;
+function Products(props) {
   const dispatch = useDispatch();
-  const {data} = useFetch(API_URL, {params: {id}});
+  const {data} = useFetch(API_URL);
+
+  if (data) {
+    dispatch({type: 'SET_PRODUCTS', payload: {products: data}});
+  }
 
   const renderProduct = ({item}) => {
     return (
       <ProductList
         item={item}
-        onClick={() => params.navigation.navigate('Basket Screen')}
         onBasket={() => dispatch({type: 'ADD_TO_BASKET', payload: {item}})}
       />
     );
@@ -31,3 +33,5 @@ export function Products(props) {
     </View>
   );
 }
+
+export {Products};

@@ -1,10 +1,10 @@
-import React from 'react'
-import { View, Text } from 'react-native'
+import React from 'react';
+import {View, Text} from 'react-native';
 
-export  function Basket() {
-    return (
-        <View>
-            <Text>Basket</Text>
-        </View>
-    )
+export function Basket() {
+  return (
+    <View>
+      <Text>Basket</Text>
+    </View>
+  );
 }
