@@ -20,10 +20,12 @@ export default function ProductList({data, onClick}) {
           resizeMode={'center'}
         />
         <View style={styles.textContainer}>
-          <Icon name="shopping" color={'red'} size={20} />
           <Text style={styles.title}>{data.title}</Text>
           <Text style={styles.price}>{data.price} ₺</Text>
         </View>
+        <TouchableOpacity style={styles.iconContainer}>
+          <Icon name="shopping" color={'#f57f17'} size={50} />
+        </TouchableOpacity>
       </View>
     </TouchableOpacity>
   );
@@ -46,21 +48,25 @@ const styles = StyleSheet.create({
   textContainer: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
   },
   title: {
     flex: 2,
     fontWeight: 'bold',
     fontSize: 15,
-    fontFamily: 'monospace',
     textAlign: 'left',
     color: '#333',
   },
   price: {
     flex: 1,
     textAlign: 'right',
-    fontSize: 20,
+    fontFamily: 'monospace',
+    fontSize: 30,
     color: 'red',
     fontWeight: 'bold',
+  },
+  iconContainer: {
+    alignItems: 'center',
   },
 });
