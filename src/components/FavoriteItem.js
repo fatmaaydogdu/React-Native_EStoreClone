@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-export function Basket() {
+export function Favorites() {
   return (
     <View>
-      <Text>Basket</Text>
+      <Text>Favorites</Text>
     </View>
   );
 }

@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-function FavoritesItem(item) {
+function BasketItem(item) {
   return (
     <View>
       <Text>{item.title}</Text>
     </View>
   );
 }
-export default FavoritesItem;
+export default BasketItem;

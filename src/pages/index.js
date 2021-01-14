@@ -1,3 +1,3 @@
-export * from './Basket';
-export * from './Products';
 export * from './Favorites';
+export * from './Products';
+export * from './Basket';

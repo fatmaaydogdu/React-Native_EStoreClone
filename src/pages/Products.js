@@ -2,7 +2,7 @@ import React from 'react';
 import {View, FlatList} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {useFetch} from '../hooks/useFetch';
-import ProductList from '../components/ProductList';
+import ProductItem from '../components/ProductItem';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -16,9 +16,9 @@ function Products(props) {
 
   const renderProduct = ({item}) => {
     return (
-      <ProductList
+      <ProductItem
         item={item}
-        onBasket={() => dispatch({type: 'ADD_TO_BASKET', payload: {item}})}
+        onBasket={() => dispatch({type: 'ADD_TO_BASKET', payload: {basket}})}
       />
     );
   };

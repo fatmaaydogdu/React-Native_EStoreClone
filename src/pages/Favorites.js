@@ -1,22 +1,10 @@
 import React from 'react';
-import {View, Text, FlatList} from 'react-native';
-import {useSelector} from 'react-redux';
-import {FavoritesItem} from '../components/FavoritesItem';
+import {View, Text} from 'react-native';
 
-function Favorites(props) {
-  const favlist = useSelector((state) => state.favorites);
-
-  const renderFavorites = ({item}) => <FavoritesItem item={item} />;
-
+export function Favorites() {
   return (
     <View>
-      <FlatList
-        keyExtractor={(_, i) => i.toString()}
-        data={favlist}
-        renderItem={renderFavorites}
-      />
+      <Text>Favorites</Text>
     </View>
   );
 }
-
-export {Favorites};

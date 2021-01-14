@@ -1,10 +1,22 @@
 import React from 'react';
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
+import {useSelector} from 'react-redux';
+import {BasketItem} from '../components/BasketItem';
 
-export function Basket() {
+function Basket(props) {
+  const basketList = useSelector((state) => state.basket);
+
+  const renderFavorites = ({item}) => <BasketItem item={item} />;
+
   return (
     <View>
-      <Text>Basket</Text>
+      <FlatList
+        keyExtractor={(_, i) => i.toString()}
+        data={basketList}
+        renderItem={renderFavorites}
+      />
     </View>
   );
 }
+
+export {Basket};

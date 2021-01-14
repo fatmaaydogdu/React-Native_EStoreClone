@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function ProductList({item, onBasket}) {
+function ProductItem({item, onBasket}) {
   return (
     <TouchableOpacity onPress={onBasket}>
       <View style={styles.container}>
@@ -71,4 +71,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ProductList;
+export default ProductItem;
