@@ -3,10 +3,10 @@ import {View, Text, FlatList} from 'react-native';
 import {useSelector} from 'react-redux';
 import {BasketItem} from '../components/BasketItem';
 
-function Basket(props) {
-
+function Basket() {
   const basketList = useSelector((state) => state.basket);
-console.log(basketList)
+  console.log(basketList);
+
   const renderBasket = ({item}) => <BasketItem item={item} />;
 
   return (
