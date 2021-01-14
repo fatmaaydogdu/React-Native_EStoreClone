@@ -23,7 +23,7 @@ function ProductItem({item, onBasket}) {
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.price}>{item.price} ₺</Text>
         </View>
-        <TouchableOpacity onPress={onBasket} style={styles.iconContainer}>
+        <TouchableOpacity onPress={onBasket(item)} style={styles.iconContainer}>
           <Icon name="shopping" color={'#f57f17'} size={35} />
           <Text style={styles.iconText}>Sepete Ekle</Text>
         </TouchableOpacity>

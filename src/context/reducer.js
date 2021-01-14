@@ -1,8 +1,8 @@
 function reducer(state, action) {
   switch (action.type) {
     case 'ADD_TO_BASKET':
-      const {basket} = action.payload;
-      return {...state, basket: [...state.basket, basket]};
+      const {item} = action.payload;
+      return {...state, basket: [...state.basket, item]};
 
     case 'SET_PRODUCTS':
       const {products} = action.payload;
