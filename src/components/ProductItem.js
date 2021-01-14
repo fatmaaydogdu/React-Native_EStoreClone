@@ -11,7 +11,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 function ProductItem({item, onBasket}) {
   return (
-    <TouchableOpacity onPress={onBasket}>
+    <View>
       <View style={styles.container}>
         <Icon name="heart" color={'red'} size={25} />
         <Image
@@ -23,11 +23,12 @@ function ProductItem({item, onBasket}) {
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.price}>{item.price} ₺</Text>
         </View>
-        <TouchableOpacity style={styles.iconContainer}>
-          <Icon name="shopping" color={'#f57f17'} size={50} />
+        <TouchableOpacity onPress={onBasket} style={styles.iconContainer}>
+          <Icon name="shopping" color={'#f57f17'} size={35} />
+          <Text style={styles.iconText}>Sepete Ekle</Text>
         </TouchableOpacity>
       </View>
-    </TouchableOpacity>
+    </View>
   );
 }
 
@@ -67,7 +68,14 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   iconContainer: {
+    flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconText: {
+    color: '#f57f17',
+    fontWeight: 'bold',
+    fontSize: 16,
   },
 });
 
