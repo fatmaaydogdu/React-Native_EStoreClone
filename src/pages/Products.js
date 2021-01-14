@@ -18,7 +18,7 @@ function Products(props) {
     return (
       <ProductItem
         item={item}
-        onBasket={(item) => dispatch({type: 'ADD_TO_BASKET', payload: {item}})}
+        onBasket={() => dispatch({type: 'ADD_TO_BASKET', payload: {item}})}
       />
     );
   };
