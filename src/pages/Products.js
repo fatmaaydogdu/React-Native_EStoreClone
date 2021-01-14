@@ -10,9 +10,9 @@ function Products(props) {
   const dispatch = useDispatch();
   const {data} = useFetch(API_URL);
 
-  if (data) {
-    dispatch({type: 'SET_PRODUCTS', payload: {products: data}});
-  }
+  // if (data) {
+  //   dispatch({type: 'SET_PRODUCTS', payload: {products: data}});
+  // }
 
   const renderProduct = ({item}) => {
     return (

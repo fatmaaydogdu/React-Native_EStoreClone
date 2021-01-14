@@ -8,4 +8,4 @@ function BasketItem({item}) {
     </View>
   );
 }
-export default BasketItem;
+export {BasketItem};

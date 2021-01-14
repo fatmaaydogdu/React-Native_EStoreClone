@@ -4,8 +4,9 @@ import {useSelector} from 'react-redux';
 import {BasketItem} from '../components/BasketItem';
 
 function Basket(props) {
-  const basketList = useSelector((state) => state.basket);
 
+  const basketList = useSelector((state) => state.basket);
+console.log(basketList)
   const renderBasket = ({item}) => <BasketItem item={item} />;
 
   return (
