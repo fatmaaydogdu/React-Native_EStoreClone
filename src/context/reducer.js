@@ -8,11 +8,12 @@ function reducer(state, action) {
     //   const {products} = action.payload;
     //   return {...state, products};
 
-     case 'ADD_TO_FAVORITE':
-         const {item} = action.payload;
-         const index = state.favorites.findIndex((fav) => fav.id == item.id );
-         return index === -1
-          ? {...state, favorites: [...state.favorites, item]} : state;
+    case 'ADD_TO_FAVORITE':
+      const {favo} = action.payload;
+      const index = state.favorites.findIndex((fav) => fav.id == favo.id);
+      return index === -1
+        ? {...state, favorites: [...state.favorites, favo]}
+        : state;
 
     default:
       return state;

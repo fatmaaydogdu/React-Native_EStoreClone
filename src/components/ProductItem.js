@@ -9,11 +9,13 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function ProductItem({item, onBasket}) {
+function ProductItem({item, onBasket, onFav}) {
   return (
     <View>
       <View style={styles.container}>
-        <Icon name="heart" color={'red'} size={25} />
+        <TouchableOpacity onPress={onFav}>
+          <Icon name="heart" color={'red'} size={25} />
+        </TouchableOpacity>
         <Image
           style={styles.image}
           source={{uri: item.image}}
