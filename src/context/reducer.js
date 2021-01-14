@@ -10,7 +10,10 @@ function reducer(state, action) {
 
     case 'ADD_TO_FAVORITE':
       const {favo} = action.payload;
-      return {...state, favorites: [...state.favorites, favo]};
+      const index = state.favorites.findIndex((fav) => fav.id == favo.id);
+      return index === -1
+        ? {...state, favorites: [...state.favorites, favo]}
+        : state;
 
     default:
       return state;
