@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-function FavoritesItem({item}) {
+function FavoriteItem({item}) {
   return (
     <View>
       <Text>{item.title}</Text>
@@ -9,4 +9,4 @@ function FavoritesItem({item}) {
   );
 }
 
-export {FavoritesItem};
+export {FavoriteItem};
