@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     flex:1,
     flexDirection:'row',
     alignItems:'center',
+    justifyContent:'space-between'
   },
   titleContainer:{
     alignContent:'flex-end',
@@ -50,6 +51,8 @@ const styles = StyleSheet.create({
   price: {
     color:'red',
     fontWeight:'bold',
+    textAlign:'right',
+    fontSize:15,
   },
   description: {
     textAlign:'justify',
