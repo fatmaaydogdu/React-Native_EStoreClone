@@ -11,17 +11,28 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function ProductItem({item, onBasket, onFav}) {
+function ProductItem({item, onBasket, onFav, saveProduct}) {
   async function saveProduct() {
-    const productData = `${item.title} | ${item.price}`;
-    await AsyncStorage.setItem('@PRODUCTS', productData);
+    const productData = `${item.title} | ${item.price} | ${item.image} `;
+    const productsData = await AsyncStorage.getItem('@PRODUCTS')
+    const products = JSON.parse(productsData)
+
+    if(products && products.length >= 1) {
+      products.push(productData)
+      await  AsyncStorage.setItem('@PRODUCTS', JSON.stringify(products))
+    }
+    else{
+      await AsyncStorage.setItem('@PRODUCTS', JSON.stringify([productData])) 
+    }
+
+    await AsyncStorage.setItem('@PRODUCTS' ,productData);
     Alert.alert(`${item.title}`, `Ürün favorilere eklendi!`);
   }
 
   return (
     <View>
       <View style={styles.container}>
-        <TouchableOpacity onPress={onFav} onPress={saveProduct}>
+        <TouchableOpacity onPress={onFav}  >
           <Icon name="heart" color={'red'} size={25} />
         </TouchableOpacity>
         <Image
