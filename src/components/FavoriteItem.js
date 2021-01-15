@@ -4,10 +4,11 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function FavoriteItem({item}) {
 
-  async  = await AsyncStorage.getItem('@PRODUCTS');
+   async function favItem(){
+     const fav= await AsyncStorage.getItem('@PRODUCTS');
 
-
-  return (
+     if (fav !== null) {
+       return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
         <Image 
@@ -23,8 +24,14 @@ function FavoriteItem({item}) {
       </View>
       
       <Text style={styles.description}>{item.description}</Text>
+      <Text>{favItem}</Text>
     </View>
   );
+     } 
+   } 
+  
+
+  
 }
 
 const styles = StyleSheet.create({
