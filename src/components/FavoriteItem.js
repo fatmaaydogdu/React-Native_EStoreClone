@@ -1,7 +1,12 @@
 import React from 'react';
 import {View, Text, StyleSheet, Image,Dimensions} from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function FavoriteItem({item}) {
+
+  async  = await AsyncStorage.getItem('@PRODUCTS');
+
+
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
