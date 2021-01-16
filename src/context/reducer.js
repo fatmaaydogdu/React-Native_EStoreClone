@@ -5,13 +5,17 @@ function reducer(state, action) {
       return {...state, basket: [...state.basket, item]};
 
     case 'REMOVE_FROM_BASKET':
+      console.log('STATE: ' + {...state});
       const {remove_basket} = action.payload;
       const removeBasket = state.basket.findIndex(
-        (e) => e.id == remove_basket.id,
+        (e) => e.id === remove_basket.id,
       );
-      console.log(removeBasket);
-      console.log('ID' + remove_basket);
-      return removeBasket > -1 ? state.basket.splice(remove_basket, 1) : state;
+      if (removeBasket > -1) {
+        state.basket.splice(remove_basket, 1);
+        return {...state, basket: [...state.basket]};
+      } else {
+        return state;
+      }
 
     // case 'SET_PRODUCTS':
     //   const {products} = action.payload;
