@@ -19,7 +19,6 @@ function Products(props) {
       <ProductItem
         item={item}
         onBasket={() => dispatch({type: 'ADD_TO_BASKET', payload: {item}})}
-        onFav={() => dispatch({type: 'ADD_TO_FAVORITE', payload: {favo: item}})}
       />
     );
   };

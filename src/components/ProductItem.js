@@ -11,28 +11,44 @@ import {
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-function ProductItem({item, onBasket, onFav, saveProduct}) {
-  async function saveProduct() {
-    const productData = `${item.title} | ${item.price} | ${item.image} `;
-    const productsData = await AsyncStorage.getItem('@PRODUCTS')
-    const products = JSON.parse(productsData)
+function ProductItem({item, onBasket}) {
+  // async function saveProduct() {
+  //   const productData = `${item.title} | ${item.price} | ${item.image} `;
+  //   const productsData = await AsyncStorage.getItem('@PRODUCTS');
+  //   const products = JSON.parse(productsData);
 
-    if(products && products.length >= 1) {
-      products.push(productData)
-      await  AsyncStorage.setItem('@PRODUCTS', JSON.stringify(products))
-    }
-    else{
-      await AsyncStorage.setItem('@PRODUCTS', JSON.stringify([productData])) 
-    }
+  //   if (products && products.length >= 1) {
+  //     products.push(productData);
+  //     await AsyncStorage.setItem('@PRODUCTS', JSON.stringify(products));
+  //   } else {
+  //     await AsyncStorage.setItem('@PRODUCTS', JSON.stringify([productData]));
+  //   }
 
-    await AsyncStorage.setItem('@PRODUCTS' ,productData);
-    Alert.alert(`${item.title}`, `Ürün favorilere eklendi!`);
+  //   await AsyncStorage.setItem('@PRODUCTS', productData);
+  //   Alert.alert(`${item.title}`, `Ürün favorilere eklendi!`);
+  // }
+
+  async function addToFavorites() {
+    let products = await AsyncStorage.getItem('@FAVPRODUCTS');
+    if (!products) {
+      products = [];
+    } else {
+      products = JSON.parse(products);
+    }
+    if (products.some((data) => data.id === item.id)) {
+      Alert.alert('Already in favorites');
+    } else {
+      products.push(item);
+      products = JSON.stringify(products);
+      await AsyncStorage.setItem('@FAVPRODUCTS', products);
+      Alert.alert('Added to favorites');
+    }
   }
 
   return (
     <View>
       <View style={styles.container}>
-        <TouchableOpacity onPress={onFav}  >
+        <TouchableOpacity onPress={addToFavorites}>
           <Icon name="heart" color={'red'} size={25} />
         </TouchableOpacity>
         <Image

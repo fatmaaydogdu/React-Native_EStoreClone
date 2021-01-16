@@ -1,13 +1,25 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import {useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {BasketItem} from '../components/BasketItem';
 
 function Basket() {
+  const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket);
   console.log(basketList);
 
-  const renderBasket = ({item}) => <BasketItem item={item} />;
+  const renderBasket = ({item}) => (
+    <BasketItem
+      item={item}
+      removeBasket={() =>
+        dispatch({
+          type: 'REMOVE_FROM_BASKET',
+          payload: {remove_basket: item},
+        })
+      }
+    />
+  );
 
   return (
     <View>

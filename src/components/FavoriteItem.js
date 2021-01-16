@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import {
   View,
   Text,
@@ -7,12 +7,20 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+//import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function FavoriteItem({item, removeFav}) {
-  async function favItem() {
-    const fav = await AsyncStorage.getItem('@PRODUCTS');
-  }
+  // const [favorites, setFavorites] = useState([]);
+  // async function favItem() {
+  //   const fav = await AsyncStorage.getItem('@FAVPRODUCTS');
+  //   const parsedFav = JSON.parse(fav);
+  //   setFavorites(parsedFav);
+  // }
+
+  // useEffect(() => {
+  //   favItem();
+  // }, []);
+  // console.log(favorites);
 
   return (
     <View style={styles.container}>
@@ -27,8 +35,8 @@ function FavoriteItem({item, removeFav}) {
           <Text style={styles.price}>{item.price} ₺</Text>
         </View>
       </View>
-      <TouchableOpacity>
-        <Text onPress={() => removeFav()}>SİL</Text>
+      <TouchableOpacity onPress={removeFav}>
+        <Text>SİL</Text>
       </TouchableOpacity>
       <Text style={styles.description}>{item.description}</Text>
     </View>

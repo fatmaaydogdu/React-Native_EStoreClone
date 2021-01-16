@@ -4,6 +4,14 @@ function reducer(state, action) {
       const {item} = action.payload;
       return {...state, basket: [...state.basket, item]};
 
+    case 'REMOVE_FROM_BASKET':
+      const remove_basket = action.payload;
+      const removeBasket = state.basket.findIndex(
+        (e) => e.id == remove_basket.id,
+      );
+      console.log(removeBasket);
+      return removeBasket > -1 ? state.basket.splice(remove_basket, 1) : state;
+
     // case 'SET_PRODUCTS':
     //   const {products} = action.payload;
     //   return {...state, products};
