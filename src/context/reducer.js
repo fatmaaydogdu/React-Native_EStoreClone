@@ -15,6 +15,13 @@ function reducer(state, action) {
         ? {...state, favorites: [...state.favorites, favo]}
         : state;
 
+    case 'REMOVE_FROM_FAVORITE':
+      const {remove_favorite} = action.payload;
+      const remove = state.favorites.findIndex(
+        (e) => e.id == remove_favorite.id,
+      );
+      return remove > -1 ? state.favorites.splice(remove_favorite, 1) : state;
+
     default:
       return state;
   }
