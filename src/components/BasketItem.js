@@ -7,6 +7,8 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 
 function BasketItem({item, removeBasket}) {
   return (
@@ -22,10 +24,12 @@ function BasketItem({item, removeBasket}) {
           <Text style={styles.price}>{item.price} ₺</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={removeBasket}>
-        <Text>SİL</Text>
-      </TouchableOpacity>
       <Text style={styles.description}>{item.description}</Text>
+
+        <TouchableOpacity onPress={removeBasket} style={{alignItems:'flex-end'}} >
+      <Icon name="delete" color={'orange'} size={30} />
+      </TouchableOpacity>
+      
     </View>
   );
 }

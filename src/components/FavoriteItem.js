@@ -7,6 +7,7 @@ import {
   Dimensions,
   TouchableOpacity,
 } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 //import AsyncStorage from '@react-native-async-storage/async-storage';
 
 function FavoriteItem({item, removeFav}) {
@@ -35,10 +36,11 @@ function FavoriteItem({item, removeFav}) {
           <Text style={styles.price}>{item.price} ₺</Text>
         </View>
       </View>
-      <TouchableOpacity onPress={removeFav}>
-        <Text>SİL</Text>
-      </TouchableOpacity>
       <Text style={styles.description}>{item.description}</Text>
+      
+      <TouchableOpacity onPress={removeFav} style={{alignItems:'flex-end'}}>
+      <Icon name="delete" color={'red'} size={30} />
+      </TouchableOpacity>
     </View>
   );
 }
