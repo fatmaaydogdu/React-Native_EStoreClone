@@ -88,7 +88,9 @@ function ProductItem({item, onBasket}) {
             <Text style={modalStyle.price}>{item.price} ₺</Text>
           </View>
           <Text style={modalStyle.desc}>'{item.description}'</Text>
-          <Button title="Hide modal" onPress={toggleModal} />
+          <TouchableOpacity style={modalStyle.button} onPress={toggleModal}>
+            <Text style={modalStyle.btnTxt}>Sayfaya Dön</Text>
+          </TouchableOpacity>
         </View>
       </Modal>
     </View>
@@ -145,8 +147,8 @@ const styles = StyleSheet.create({
 const modalStyle = StyleSheet.create({
   container: {
     backgroundColor: 'white',
-    borderRadius: 5,
-    height: Dimensions.get('window').height / 2,
+    borderRadius: 10,
+    height: Dimensions.get('window').height / 2, //ürün detay boyutunu niye küçültemiyoruz acaba? bakıcaz tekrar
   },
   image: {
     width: Dimensions.get('window').width * 0.9,
@@ -176,6 +178,22 @@ const modalStyle = StyleSheet.create({
     fontSize: 15,
     fontStyle: 'italic',
   },
- 
+  button: {
+    backgroundColor: '#f57f17',
+    padding: 5,
+    margin: 5,
+    marginTop: 70,
+    borderRadius: 5,
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: Dimensions.get('window').width / 3,
+    alignSelf: 'center',
+  },
+  btnTxt: {
+    color: 'white',
+    fontWeight: 'bold',
+    fontSize: 16,
+    padding: 5,
+  },
 });
 export default ProductItem;
