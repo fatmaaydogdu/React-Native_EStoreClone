@@ -160,7 +160,7 @@ const modalStyle = StyleSheet.create({
   title: {
     flex: 2,
     fontWeight: 'bold',
-    fontSize: 15,
+    fontSize: 20,
     textAlign: 'left',
     color: '#333',
   },
@@ -173,8 +173,9 @@ const modalStyle = StyleSheet.create({
     fontWeight: 'bold',
   },
   desc: {
-    fontSize: 12,
+    fontSize: 15,
     fontStyle: 'italic',
   },
+ 
 });
 export default ProductItem;
