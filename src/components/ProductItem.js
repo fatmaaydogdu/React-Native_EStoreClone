@@ -146,13 +146,13 @@ const modalStyle = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     borderRadius: 5,
+    height: Dimensions.get('window').height / 2,
   },
   image: {
     width: Dimensions.get('window').width * 0.9,
     height: Dimensions.get('window').height / 3,
   },
   textContainer: {
-    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-evenly',
     alignItems: 'center',
