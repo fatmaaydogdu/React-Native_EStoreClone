@@ -49,7 +49,6 @@ function Favorites() {
 
   return (
     <ScrollView>
-      <HeaderItem header="FAVORİLER" />
       {favorites.map((e, i) => (
         <FavoriteItem
           key={i}

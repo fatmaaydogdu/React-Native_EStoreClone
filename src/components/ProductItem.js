@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   View,
   Text,
@@ -7,11 +7,19 @@ import {
   Dimensions,
   TouchableOpacity,
   Alert,
+  Button,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import Modal from 'react-native-modal';
 
 function ProductItem({item, onBasket}) {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setModalVisible(!isModalVisible);
+  };
+
   // async function saveProduct() {
   //   const productData = `${item.title} | ${item.price} | ${item.image} `;
   //   const productsData = await AsyncStorage.getItem('@PRODUCTS');
@@ -51,11 +59,13 @@ function ProductItem({item, onBasket}) {
         <TouchableOpacity onPress={addToFavorites}>
           <Icon name="heart" color={'red'} size={25} />
         </TouchableOpacity>
-        <Image
-          style={styles.image}
-          source={{uri: item.image}}
-          resizeMode={'center'}
-        />
+        <TouchableOpacity onPress={toggleModal}>
+          <Image
+            style={styles.image}
+            source={{uri: item.image}}
+            resizeMode={'center'}
+          />
+        </TouchableOpacity>
         <View style={styles.textContainer}>
           <Text style={styles.title}>{item.title}</Text>
           <Text style={styles.price}>{item.price} ₺</Text>
@@ -65,6 +75,22 @@ function ProductItem({item, onBasket}) {
           <Text style={styles.iconText}>Sepete Ekle</Text>
         </TouchableOpacity>
       </View>
+
+      <Modal style={modalStyle.container} isVisible={isModalVisible}>
+        <View style={{flex: 1}}>
+          <Image
+            style={modalStyle.image}
+            source={{uri: item.image}}
+            resizeMode={'center'}
+          />
+          <View style={modalStyle.textContainer}>
+            <Text style={modalStyle.title}>{item.title}</Text>
+            <Text style={modalStyle.price}>{item.price} ₺</Text>
+          </View>
+          <Text style={modalStyle.desc}>'{item.description}'</Text>
+          <Button title="Hide modal" onPress={toggleModal} />
+        </View>
+      </Modal>
     </View>
   );
 }
@@ -116,4 +142,39 @@ const styles = StyleSheet.create({
   },
 });
 
+const modalStyle = StyleSheet.create({
+  container: {
+    backgroundColor: 'white',
+    borderRadius: 5,
+  },
+  image: {
+    width: Dimensions.get('window').width * 0.9,
+    height: Dimensions.get('window').height / 3,
+  },
+  textContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  title: {
+    flex: 2,
+    fontWeight: 'bold',
+    fontSize: 15,
+    textAlign: 'left',
+    color: '#333',
+  },
+  price: {
+    flex: 1,
+    textAlign: 'right',
+    fontFamily: 'monospace',
+    fontSize: 20,
+    color: 'red',
+    fontWeight: 'bold',
+  },
+  desc: {
+    fontSize: 12,
+    fontStyle: 'italic',
+  },
+});
 export default ProductItem;
