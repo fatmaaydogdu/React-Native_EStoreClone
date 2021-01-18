@@ -7,10 +7,9 @@ import {
   ActivityIndicator,
   RefreshControl,
 } from 'react-native';
-import {useSelector} from 'react-redux';
-import {useDispatch} from 'react-redux';
 import {FavoriteItem} from '../components/FavoriteItem';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import HeaderItem from '../components/HeaderItem';
 
 function Favorites() {
   const [favorites, setFavorites] = useState([]);
@@ -50,6 +49,7 @@ function Favorites() {
 
   return (
     <ScrollView>
+      <HeaderItem header="FAVORİLER" />
       {favorites.map((e, i) => (
         <FavoriteItem
           key={i}

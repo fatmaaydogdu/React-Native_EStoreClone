@@ -3,6 +3,7 @@ import {View, FlatList} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {useFetch} from '../hooks/useFetch';
 import ProductItem from '../components/ProductItem';
+import HeaderItem from '../components/HeaderItem';
 
 const API_URL = 'https://fakestoreapi.com/products';
 
@@ -26,6 +27,7 @@ function Products(props) {
   return (
     <View>
       <FlatList
+        ListHeaderComponent={<HeaderItem header="ÜRÜNLER" />}
         keyExtractor={(item) => item.id.toString()}
         data={data}
         renderItem={renderProduct}

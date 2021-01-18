@@ -23,8 +23,8 @@ function Router() {
             inactiveTintColor: 'gray',
           }}>
           <Tab.Screen name="Basket Screen" component={Basket} />
-          <Tab.Screen name="Favorites Screen" component={Favorites} />
           <Tab.Screen name="Product Screen" component={Products} />
+          <Tab.Screen name="Favorites Screen" component={Favorites} />
         </Tab.Navigator>
       </NavigationContainer>
     </MainProvider>
