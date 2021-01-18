@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 import {useDispatch} from 'react-redux';
 import {BasketItem} from '../components/BasketItem';
 import HeaderItem from '../components/HeaderItem';
+import Empty from '../components/Empty';
+
 function Basket() {
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket);
@@ -24,6 +26,7 @@ function Basket() {
   return (
     <View>
       <FlatList
+        ListEmptyComponent={<Empty />}
         ListHeaderComponent={<HeaderItem header="SEPET" />}
         keyExtractor={(_, i) => i.toString()}
         data={basketList}
