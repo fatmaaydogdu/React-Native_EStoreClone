@@ -10,30 +10,19 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-function BasketItem({item, removeBasket}) {
+function BoughtItem({item}) {
   return (
     <View style={{flex: 1}}>
       <View style={styles.container}>
-        <View style={styles.imageContainer}>
-          <Image
-            style={styles.image}
-            source={{uri: item.image}}
-            resizeMode={'center'}
-          /> 
+          
           <View style={styles.titleContainer}>
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.price}>{item.price} ₺</Text>
           </View>
         </View>
         <Text style={styles.description}>{item.description}</Text>
-
-        <TouchableOpacity
-          onPress={removeBasket}
-          style={{alignItems: 'flex-end'}}>
-          <Icon name="delete" color={'orange'} size={30} />
-        </TouchableOpacity>
       </View>
-    </View>
+    
   );
 }
 
@@ -75,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export {BasketItem};
+export {BoughtItem};

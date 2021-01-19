@@ -19,7 +19,10 @@ function reducer(state, action) {
 
       case 'BUY_PRODUCT' :
       const {data} = action.payload;
-      return {...state, on_the_product: [...state.on_the_product, data]};
+      console.log(state)
+      return {...state, on_the_product: [...state.on_the_product, data]
+      };
+      
 
     // case 'SET_PRODUCTS':
     //   const {products} = action.payload;
