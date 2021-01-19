@@ -25,7 +25,7 @@ function Products(props) {
   };
 
   return (
-    <View>
+    <View style={{flex: 1}}>
       <FlatList
         ListHeaderComponent={<HeaderItem header="ÜRÜNLER" />}
         keyExtractor={(item) => item.id.toString()}

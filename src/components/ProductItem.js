@@ -39,17 +39,17 @@ function ProductItem({item, onBasket}) {
   async function addToFavorites() {
     let products = await AsyncStorage.getItem('@FAVPRODUCTS');
     if (!products) {
-      products = [];
+      products = []; //ben de burada tıkandım şu an
     } else {
       products = JSON.parse(products);
     }
     if (products.some((data) => data.id === item.id)) {
-      Alert.alert('Already in favorites');
+      Alert.alert('Halihazırda Favorilerde');
     } else {
       products.push(item);
       products = JSON.stringify(products);
       await AsyncStorage.setItem('@FAVPRODUCTS', products);
-      Alert.alert('Added to favorites');
+      Alert.alert('Favorilere Eklendi');
     }
   }
 

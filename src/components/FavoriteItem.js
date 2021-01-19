@@ -37,9 +37,9 @@ function FavoriteItem({item, removeFav}) {
         </View>
       </View>
       <Text style={styles.description}>{item.description}</Text>
-      
-      <TouchableOpacity onPress={removeFav} style={{alignItems:'flex-end'}}>
-      <Icon name="delete" color={'red'} size={30} />
+
+      <TouchableOpacity onPress={removeFav} style={{alignItems: 'flex-end'}}>
+        <Icon name="delete" color={'red'} size={30} />
       </TouchableOpacity>
     </View>
   );
