@@ -38,6 +38,7 @@ function Favorites() {
     setLoading(false);
     setFavorites(parsedFav);
   }
+
   async function removeFav(product) {
     let fav = await AsyncStorage.getItem('@FAVPRODUCTS');
     if (!fav) {
