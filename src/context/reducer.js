@@ -17,6 +17,10 @@ function reducer(state, action) {
         return state;
       }
 
+      case 'BUY_PRODUCT' :
+      const {data} = action.payload;
+      return {...state, on_the_product: [...state.on_the_product, data]};
+
     // case 'SET_PRODUCTS':
     //   const {products} = action.payload;
     //   return {...state, products};
