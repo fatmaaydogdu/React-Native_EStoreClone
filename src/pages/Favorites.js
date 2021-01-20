@@ -18,19 +18,6 @@ function Favorites() {
   // const favoriteList = useSelector((state) => state.favorites);
   // console.log(favoriteList);
 
-  const renderFavorites = ({item}) => (
-    <FavoriteItem
-      item={item}
-      removeFav={removeFav(item)}
-      //removeFav={() =>
-      //   dispatch({
-      //     type: 'REMOVE_FROM_FAVORITE',
-      //     payload: {remove_favorite: e},
-      //   })
-      // }
-    />
-  );
-
   async function favItem() {
     setLoading(true);
     let fav = await AsyncStorage.getItem('@FAVPRODUCTS');
@@ -39,21 +26,18 @@ function Favorites() {
     setFavorites(parsedFav);
   }
 
-  async function removeFav(product) {
+  async function removeFav(id) {
     let fav = await AsyncStorage.getItem('@FAVPRODUCTS');
     if (!fav) {
       fav = [];
     } else {
       fav = JSON.parse(fav);
     }
-    let index_remove = fav.findIndex((item) => item.id === product.id);
-    if (index_remove > -1) {
-      fav.splice(index_remove, 1);
-      fav = JSON.stringify(fav);
-      await AsyncStorage.setItem('@FAVPRODUCTS', fav);
-    }
-
-    setFavorites(fav);
+    let filteredProducts = fav.filter((item) => item.id !== id);
+    fav = JSON.stringify(filteredProducts);
+    await AsyncStorage.setItem('@FAVPRODUCTS', fav);
+    favItem();
+    console.log(fav);
   }
 
   useEffect(() => {
@@ -65,6 +49,18 @@ function Favorites() {
   //   return <ActivityIndicator size="large" />;
   // }
 
+  const renderFavorites = ({item}) => (
+    <FavoriteItem
+      item={item}
+      removeFav={removeFav}
+      //removeFav={() =>
+      //   dispatch({
+      //     type: 'REMOVE_FROM_FAVORITE',
+      //     payload: {remove_favorite: e},
+      //   })
+      // }
+    />
+  );
   return (
     <View>
       {/* {favorites.map((e, i) => (
@@ -81,6 +77,7 @@ function Favorites() {
         />
       ))} */}
       <FlatList
+        ListHeaderComponent={<HeaderItem header="FAVORİLER" />}
         data={favorites}
         keyExtractor={(item, index) => index.toString()}
         renderItem={renderFavorites}

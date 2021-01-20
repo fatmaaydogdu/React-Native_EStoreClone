@@ -20,14 +20,15 @@ import Modal from 'react-native-modal';
 function Basket() {
   const [isModalVisible, setModalVisible] = useState(false);
 
-
   const toggleModal = () => {
     setModalVisible(!isModalVisible);
+    dispatch({type: 'DELETE_BASKET'});
   };
 
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket);
-  const bought = useSelector((state) => state.on_the_product);
+  let basketList_2 = [...basketList];
+  //const bought = useSelector((state) => state.on_the_product);
   console.log(basketList);
 
   const renderBasket = ({item}) => (
@@ -42,11 +43,7 @@ function Basket() {
     />
   );
 
-  const renderBought = ({item}) => (
-    <BoughtItem
-      item={item}
-    />
-  );
+  const renderBought = ({item}) => <BoughtItem item={item} />;
 
   return (
     <View style={{flex: 1}}>
@@ -64,19 +61,20 @@ function Basket() {
       </View>
 
       <View>
-        <TouchableOpacity style={modalStyle.button} onPress={() => dispatch({type: 'BUY_PRODUCT', payload: (basketList)})}>
+        <TouchableOpacity
+          style={modalStyle.button}
+          onPress={() => dispatch({type: 'BUY_PRODUCT', payload: basketList})}>
           <Text style={modalStyle.buttonTxt}>Satın al</Text>
         </TouchableOpacity>
       </View>
 
       <Modal style={modalStyle.container} isVisible={isModalVisible}>
         <View style={{flex: 1}}>
-         <FlatList 
-         data={bought}
-         keyExtractor={(_,i) => i.toString()}
-         renderItem={renderBought}
-         
-         />
+          <FlatList
+            data={basketList_2}
+            keyExtractor={(_, i) => i.toString()}
+            renderItem={renderBought}
+          />
           <TouchableOpacity style={modalStyle.btn} onPress={toggleModal}>
             <Text style={modalStyle.btnTxt}>KAPAT</Text>
           </TouchableOpacity>
@@ -135,7 +133,7 @@ const modalStyle = StyleSheet.create({
   //   fontWeight: 'bold',
   // },
 
-  button:{
+  button: {
     backgroundColor: '#f57f17',
     padding: 5,
     margin: 5,
@@ -148,12 +146,12 @@ const modalStyle = StyleSheet.create({
     bottom: 0,
   },
 
-  buttonTxt:{
+  buttonTxt: {
     color: 'white',
     fontWeight: 'bold',
     fontSize: 16,
     padding: 5,
-  }
+  },
 });
 
 export {Basket};
