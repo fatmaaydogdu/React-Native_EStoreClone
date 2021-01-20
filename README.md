@@ -19,8 +19,4 @@ Benzer şekilde favoriye eklenen ürünlerde cihazın belleğine kaydedilmesi ge
 - İş parçacıkları ve görev dağılımı tamamiyle sizin insiyatifinize kalmış.
 - Tamamlanan projenin ekran görüntülerini mutlaka bu README üzerinden eklemeyi unutmayın.
 
-![screenshot-2021-01-20_21 19 38 716](https://user-images.githubusercontent.com/56413015/105219541-a0a72600-5b67-11eb-83d0-881472614ff2.png)
-![screenshot-2021-01-20_21 20 19 577](https://user-images.githubusercontent.com/56413015/105219568-a866ca80-5b67-11eb-89ea-d9451201617f.png)
-![screenshot-2021-01-20_21 20 54 331](https://user-images.githubusercontent.com/56413015/105219601-b288c900-5b67-11eb-91f9-23c9911a3aa0.png)
-![screenshot-2021-01-20_21 20 35 824](https://user-images.githubusercontent.com/56413015/105219620-b7e61380-5b67-11eb-80e6-2317c47dd588.png)
-![screenshot-2021-01-20_21 20 47 198](https://user-images.githubusercontent.com/56413015/105219629-bae10400-5b67-11eb-8658-c8fda1ad6b34.png)
+
