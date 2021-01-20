@@ -19,9 +19,11 @@ Benzer şekilde favoriye eklenen ürünlerde cihazın belleğine kaydedilmesi ge
 - İş parçacıkları ve görev dağılımı tamamiyle sizin insiyatifinize kalmış.
 - Tamamlanan projenin ekran görüntülerini mutlaka bu README üzerinden eklemeyi unutmayın.
 
-![1](https://user-images.githubusercontent.com/56413015/105220326-9c2f3d00-5b68-11eb-8456-ab3d5f82b3ef.png)
-![3](https://user-images.githubusercontent.com/56413015/105220334-9d606a00-5b68-11eb-9236-719ce1fb601f.png)
-![2](https://user-images.githubusercontent.com/56413015/105220338-9e919700-5b68-11eb-9699-6476341fda21.png)![4](https://user-images.githubusercontent.com/56413015/105220320-9afe1000-5b68-11eb-8497-22adf9be25b5.png)
-![5](https://user-images.githubusercontent.com/56413015/105220324-9b96a680-5b68-11eb-8e71-0e0f87a436c5.png)
+![Ekran Alıntısı](https://user-images.githubusercontent.com/56413015/105220946-80786680-5b69-11eb-8589-9c32102973eb.PNG)
+![Ekran Alıntısı 2](https://user-images.githubusercontent.com/56413015/105220948-8110fd00-5b69-11eb-824d-a649e50f9135.PNG)
+![Ekran Alıntısı 3](https://user-images.githubusercontent.com/56413015/105220956-82422a00-5b69-11eb-889d-2db6ee401335.PNG)
+![Ekran Alıntısı 4](https://user-images.githubusercontent.com/56413015/105220969-879f7480-5b69-11eb-9b09-cd7eb7532e01.PNG)
+![Ekran Alıntısı 5](https://user-images.githubusercontent.com/56413015/105220971-88380b00-5b69-11eb-92d4-4a733b20ced1.PNG)
+
 
 
