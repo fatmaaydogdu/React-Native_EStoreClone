@@ -20,16 +20,17 @@ import Modal from 'react-native-modal';
 function Basket() {
   const [isModalVisible, setModalVisible] = useState(false);
 
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-    dispatch({type: 'DELETE_BASKET'});
-  };
-
   const dispatch = useDispatch();
   const basketList = useSelector((state) => state.basket);
-  let basketList_2 = [...basketList];
+
   //const bought = useSelector((state) => state.on_the_product);
   console.log(basketList);
+
+  const toggleModal = () => {
+    isModalVisible ? dispatch({type: 'DELETE_BASKET'}) : null;
+
+    setModalVisible(!isModalVisible);
+  };
 
   const renderBasket = ({item}) => (
     <BasketItem
@@ -71,7 +72,7 @@ function Basket() {
       <Modal style={modalStyle.container} isVisible={isModalVisible}>
         <View style={{flex: 1}}>
           <FlatList
-            data={basketList_2}
+            data={basketList}
             keyExtractor={(_, i) => i.toString()}
             renderItem={renderBought}
           />
