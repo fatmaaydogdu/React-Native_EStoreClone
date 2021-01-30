@@ -1,6 +1,4 @@
 ```
-###İstenenler
-<br />
 # Alışveriş Uygulaması
 
 Kullanıcıların ürün satın alabildiği bir uygulamaya ihtiyaç bulunmaktadır.<br />
