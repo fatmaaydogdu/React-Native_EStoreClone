@@ -1,3 +1,6 @@
+```
+###İstenenler
+<br />
 # Alışveriş Uygulaması
 
 Kullanıcıların ürün satın alabildiği bir uygulamaya ihtiyaç bulunmaktadır.<br />
@@ -18,6 +21,8 @@ Benzer şekilde favoriye eklenen ürünlerde cihazın belleğine kaydedilmesi ge
 - İş bölümü yapılmasında ve bunun için mevcut reponun Project kısmının kullanılmasında fayda var. (Template kısmından "Basic Kanban" seçebilirsiniz.).
 - İş parçacıkları ve görev dağılımı tamamiyle sizin insiyatifinize kalmış.
 - Tamamlanan projenin ekran görüntülerini mutlaka bu README üzerinden eklemeyi unutmayın.
+
+```
 
 # E-Store Clone from Fatma & Mertkaan
 
