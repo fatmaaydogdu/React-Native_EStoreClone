@@ -9,8 +9,8 @@ ana sayfadaki listede güncellencektir. Kategoriler sistemden direkt olarak alı
 
 Kullanıcı herhangi bir ürünün detayına giderse ürünü sepete ekleyebilecek ya da favoriye alabilecektir, favoriden kaldırabilecektir.
 
-Sepete eklenen ürünler "Sepetim" ekranına gidildiğinde toplu olarak görüntülenecek, 
-kullanıcı ürünleri satın alabilecektir. Kullanıcı herhangi bir ürünü sepetten kaldırabilecektir. 
+Sepete eklenen ürünler "Sepetim" ekranına gidildiğinde toplu olarak görüntülenecek,kullanıcı ürünleri satın alabilecektir.
+Kullanıcı herhangi bir ürünü sepetten kaldırabilecektir. 
 Satın alma işleminde ürünler sepetten kaldırılacak, kullanıcıya bir geri bildirimde bulunulacak ve 
 satın alma işlemi telefonun belleğine kaydedilecektir. Yine "Sepetim" ekranında kullanıcı sipariş geçmişini görüntüleyebilecektir.
 Bu işlem, ekranda bulunan "Geçmişi Görüntüle" gibi bir buton ile Modal penceresi açılarak gerçekleştirilebilir.
