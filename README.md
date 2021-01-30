@@ -19,13 +19,7 @@ Benzer şekilde favoriye eklenen ürünlerde cihazın belleğine kaydedilmesi ge
 - İş parçacıkları ve görev dağılımı tamamiyle sizin insiyatifinize kalmış.
 - Tamamlanan projenin ekran görüntülerini mutlaka bu README üzerinden eklemeyi unutmayın.
 
-![Ekran Alıntısı](https://user-images.githubusercontent.com/56413015/105220946-80786680-5b69-11eb-8589-9c32102973eb.PNG)
-![Ekran Alıntısı 2](https://user-images.githubusercontent.com/56413015/105220948-8110fd00-5b69-11eb-824d-a649e50f9135.PNG)
-![Ekran Alıntısı 3](https://user-images.githubusercontent.com/56413015/105220956-82422a00-5b69-11eb-889d-2db6ee401335.PNG)
-![Ekran Alıntısı 4](https://user-images.githubusercontent.com/56413015/105220969-879f7480-5b69-11eb-9b09-cd7eb7532e01.PNG)
-![Ekran Alıntısı 5](https://user-images.githubusercontent.com/56413015/105220971-88380b00-5b69-11eb-92d4-4a733b20ced1.PNG)
-
-# Living Timeline from Ebru & Mertkaan
+# E-Store Clone from Fatma & Mertkaan
 
 ## This is homework for Kodluyoruz's React Native Bootcamp
 
@@ -33,17 +27,17 @@ Benzer şekilde favoriye eklenen ürünlerde cihazın belleğine kaydedilmesi ge
 
 We are developers from **Kodluyoruz Bootcamp** and we are trying a few beauty things
 
-|                                                  Giriş Ekranı                                                   |                                                   Kayıt Ekranı                                                    |                                                 Kayıt Olma İşlemi                                                 |
+|                                                                                                                 |                                                                                                                   |                                                                                                                   |
 | :-------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
 | ![Login](https://user-images.githubusercontent.com/56413015/105220946-80786680-5b69-11eb-8589-9c32102973eb.PNG) | ![Sign Up](https://user-images.githubusercontent.com/56413015/105220948-8110fd00-5b69-11eb-824d-a649e50f9135.PNG) | ![Sign Up](https://user-images.githubusercontent.com/56413015/105220956-82422a00-5b69-11eb-889d-2db6ee401335.PNG) |
 
-|                                                 Timeline Ekranı                                                 |                                             Favorilere Ekleme İşlemi                                              |
+|                                                                                                                 |                                                                                                                   |
 | :-------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
 | ![Login](https://user-images.githubusercontent.com/56413015/105220969-879f7480-5b69-11eb-9b09-cd7eb7532e01.PNG) | ![Sign Up](https://user-images.githubusercontent.com/56413015/105220971-88380b00-5b69-11eb-92d4-4a733b20ced1.PNG) |
 
 ### We are here for you!
 
-> [Ebru Oğlakkaya's Github Page](https://github.com/ebruoglakkaya "Ebru Oğlakkaya's Github Page")
+> [Fatma Aydoğdu's Github Page](https://github.com/fatmaaydogdu "Fatma Aydoğdu's Github Page")
 
 <br />
 
